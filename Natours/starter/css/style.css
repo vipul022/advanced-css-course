@@ -18,6 +18,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
+  padding: 30px;
 }
 
 .header {
@@ -30,4 +31,8 @@ body {
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
+  /* clip-path property is used to change the shape of the container to polygon by specifying the change that is required on (x, y) axis of all 4 corners of the polygon. Top left corner is the first corner and it continuos clockwise Refer: Building the Header- Part1 from 18:20 */
+
+  /* clip-path: polygon(x y, x y, x y, x y); */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
