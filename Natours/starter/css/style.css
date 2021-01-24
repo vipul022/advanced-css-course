@@ -31,8 +31,91 @@ body {
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
+  position: relative;
   /* clip-path property is used to change the shape of the container to polygon by specifying the change that is required on (x, y) axis of all 4 corners of the polygon. Top left corner is the first corner and it continuos clockwise Refer: Building the Header- Part1 from 18:20 */
-
+  /* https://bennettfeely.com/clippy/ */
   /* clip-path: polygon(x y, x y, x y, x y); */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* transform is used to center the div */
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  /* adding the specific animation */
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  /* It delays the animation initially and repeat 3 times */
+  /* animation-delay: 1s;
+  animation-iteration-count: 3; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  /* short hand  */
+  animation: moveInRight 3s ease-out;
+}
+
+/* Adding animations */
+@keyframes moveInLeft {
+  /* 0% is before the start of animations */
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+/* can also use rotate property  */
+    /* transform: translateX(-100px) rotate(0deg); */
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  /* 100% is when the animation ends */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* 0% is before the start of animations */
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  /* 100% is when the animation ends */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
