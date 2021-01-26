@@ -7,18 +7,26 @@ Dark green: #28b485
 
 */
 /* resetting css with universal selector'*' */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+/* setting root font-size in html to use rem for all other elements. The default font-size is 16px, so 10/16*100 = 62.5% */
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;
 }
 body {
   font-family: "Lato, sans-serif";
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -40,12 +48,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 .text-box {
   position: absolute;
@@ -60,14 +68,14 @@ body {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   /* adding the specific animation */
   animation-name: moveInLeft;
   animation-duration: 3s;
@@ -79,9 +87,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
   /* short hand  */
   animation: moveInRight 3s ease-out;
 }
@@ -91,12 +99,12 @@ body {
   /* 0% is before the start of animations */
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
     /* can also use rotate property  */
     /* transform: translateX(-100px) rotate(0deg); */
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   /* 100% is when the animation ends */
   100% {
@@ -109,10 +117,10 @@ body {
   /* 0% is before the start of animations */
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   /* 100% is when the animation ends */
   100% {
@@ -125,10 +133,10 @@ body {
   /* 0% is before the start of animations */
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(10rem);
   }
   80% {
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
   }
   /* 100% is when the animation ends */
   100% {
@@ -142,23 +150,24 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
-  /* animation: moveInBottom 3s ease-out; */
+  animation: moveInBottom 3s ease-out;
+  font-size: 1.6rem;
 }
 
 .btn:hover {
   transform: translateY(-3px);
   /* box-shadow: x y blurr color of the shadow */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 /* When button is clicked, it is called active state */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 .btn-white {
   background-color: #fff;
@@ -171,7 +180,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
