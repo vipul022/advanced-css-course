@@ -11,7 +11,7 @@
   // ! this is the syntax for attribute selector. This will select all the classes which start with 'col-'
   [class^="col-"] {
     float: left;
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 138, 0.891);
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;

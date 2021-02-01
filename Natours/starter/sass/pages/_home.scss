@@ -1,0 +1,7 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  // ! margin-top is calculated by subtracting polygon height(75vh) from header's height(95vh);
+  margin-top: -20vh;
+ 
+}
