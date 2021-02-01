@@ -1,0 +1,41 @@
+.composition {
+  position: relative;
+  // !__photo is an element from BEM(block, element, modifier)
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    // !outline-offset is used to create 2rem space between outline and border of the image
+    outline-offset: 2rem;
+    // ! here --p1,--p2,--p3 modifiers are used just to position to images
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      // !outline creates the outline for every image
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.05) translate(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 20;
+    }
+  }
+
+  // ! whenever user hover on composition, this will add transform property to the photo that is not hovered
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
