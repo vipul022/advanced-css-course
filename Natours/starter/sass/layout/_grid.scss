@@ -1,6 +1,6 @@
 .row {
   max-width: $grid-width;
-  background-color: #eee;
+  // background-color: #eee;
   margin: 0 auto;
   // !not pseudo class selects all the elements except the last child element
   &:not(:last-child) {
@@ -11,7 +11,7 @@
   // ! this is the syntax for attribute selector. This will select all the classes which start with 'col-'
   [class^="col-"] {
     float: left;
-    background-color: rgba(127, 255, 138, 0.891);
+    // background-color: rgba(127, 255, 138, 0.891);
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
