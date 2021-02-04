@@ -1,23 +1,39 @@
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
   // !The perspective property is used to give a 3D-positioned element some perspective.
   // !When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.
   &__side {
-    background-color: orangered;
     color: white;
     font-size: 2rem;
     height: 50rem;
-    transition: all 0.8s;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // !this will hide the visibility of back part initially
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &--front {
-      background-color: orangered;
+      background-color: $color-white;
     }
 
     &--back {
-      background-color: green;
       // !initially back side is already rotated 180 deg
       transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
     }
   }
   // !hover on parent element(card) and apply transform to child element(__side--front)
