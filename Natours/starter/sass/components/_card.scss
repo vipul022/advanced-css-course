@@ -38,11 +38,33 @@
   }
   // !hover on parent element(card) and apply transform to child element(__side--front)
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
-    // !on hover back side will come at front i.e. rotateY(0)
+    // ! on hover back side will come at front i.e. rotateY(0)
     transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    // ! this blends the two background images
+    background-blend-mode: screen;
+    &--1 {
+      // ! linear-gradient and img both are used as background-image
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../img/nat-5.img);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.img);
+    }
   }
 }
