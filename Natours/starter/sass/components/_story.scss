@@ -1,0 +1,34 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+
+    float: left;
+    // !shape-outside: circle(radius of circle, centre of the circle) This is used to make the text around figure to flow like circle.first argument is the radius of the circle i.e. half of the width(15rem) and height(15rem) of figure. This only works if the element is floated and it has some height and width
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    // !clip-path is used to make the figure as circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // !translateX is used to give some right margin and skew is used to skew the shape in the opposite direction on the story
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img {
+    height: 100%;
+  }
+  &__text {
+    // !text is skewed in the opposite direction of the story
+    transform: skewX(12deg);
+  }
+}
