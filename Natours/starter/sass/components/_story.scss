@@ -2,7 +2,7 @@
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-  background-color: $color-white;
+  background-color: rgba($color-white, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -56,7 +56,7 @@
   &:hover &__img {
     transform: translateX(-4rem) scale(1);
     // !brightness more then 100% increases the brightness and leser than 100 decreases the brightness
-    
+
     filter: blur(3px) brightness(80%);
   }
 }
